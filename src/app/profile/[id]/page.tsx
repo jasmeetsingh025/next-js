@@ -52,7 +52,9 @@ export default function ProfilePage({ params }: any) {
           </div>
           <div className="p-8">
             <h1 className="text-xl text-gray-800 font-bold">{profile?.name}</h1>
-            <p className="text-gray-700">User ID: {userId}</p>
+            <p className="text-white font-bold text-center bg-orange-500 rounded-lg p-2 mt-2">
+              User ID: {userId}
+            </p>
             <p className="mt-2 text-gray-500">{profile?.bio}</p>
             <button
               type="button"

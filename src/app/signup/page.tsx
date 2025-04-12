@@ -64,20 +64,20 @@ export default function SignUpPage() {
         />
         <input
           className="hover:border-1 hover:border-white border-1 border-transparent transition ease-in rounded py-2 px-3 w-80"
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={user.password}
-          onChange={(e) => setUser({ ...user, password: e.target.value })}
-          required
-        />
-        <input
-          className="hover:border-1 hover:border-white border-1 border-transparent transition ease-in rounded py-2 px-3 w-80"
           type="email"
           name="email"
           placeholder="Email"
           value={user.email}
           onChange={(e) => setUser({ ...user, email: e.target.value })}
+          required
+        />
+        <input
+          className="hover:border-1 hover:border-white border-1 border-transparent transition ease-in rounded py-2 px-3 w-80"
+          type="password"
+          name="password"
+          placeholder="Password"
+          value={user.password}
+          onChange={(e) => setUser({ ...user, password: e.target.value })}
           required
         />
         <button

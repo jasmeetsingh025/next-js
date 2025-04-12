@@ -2,6 +2,8 @@ import { connectDB } from '@/src/dbConfig/dbConfog';
 import { NextResponse, NextRequest } from 'next/server';
 import User from '@/src/modules/userModel';
 import bcryptjs from 'bcryptjs';
+import { EmailType } from '@/src/helpers/constants';
+import { sendEmail } from '@/src/helpers/mailer';
 
 connectDB();
 
@@ -36,6 +38,11 @@ export async function POST(request: NextRequest) {
     console.log('User created successfully:', newUser);
     // Optionally, you can send a welcome email or perform other actions here
     // For now, just return a success message
+    await sendEmail({
+      email,
+      emailType: EmailType.VERIFICATION,
+      userID: newUser._id,
+    });
     return NextResponse.json({
       message: 'User created successfully.',
       status: 201,
